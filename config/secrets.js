@@ -20,8 +20,8 @@
  */
 
 module.exports = {
-    db: process.env.MONGODB || 'mongodb://127.0.0.1:27017/resonator_middleware',
+    db: process.env.MONGODB || 'mongodb://127.0.0.1:27017/illusionpush_middleware',
     apiSecret: process.env.API_SECRET || '123456789123456789',
     timezone: process.env.TIMEZONE || 'Asia/Kolkata',
-    trackerHost: process.env.RESONATOR || 'http://localhost:3006'
+    resonatorHost: process.env.RESONATOR || ''
 };

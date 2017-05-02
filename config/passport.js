@@ -1,10 +1,11 @@
 var secrets = require('./secrets');
 exports.isAuthenticated = function(req, res, next) {
-    if(!req.query.apikey)
+    if(!req.header.apikey)
         return next(new Error("apikey missing"))
 
-    if(req.query.apikey != secrets.apiSecret)
+    if(req.header.apikey != secrets.apiSecret)
         return next(new Error("apikey mis match"))
-
-    return next()
+        
+    if(req.header.apikey == secrets.apiSecret)
+        return next()
 };
