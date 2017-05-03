@@ -23,5 +23,6 @@ module.exports = {
     db: process.env.MONGODB || 'mongodb://127.0.0.1:27017/illusionpush_middleware',
     apiSecret: process.env.API_SECRET || '123456789123456789',
     timezone: process.env.TIMEZONE || 'Asia/Kolkata',
-    resonatorHost: process.env.RESONATOR || ''
+    // resonatorHost: process.env.RESONATOR || 'http://resonator-dev.ap-south-1.elasticbeanstalk.com'
+    resonatorHost: process.env.RESONATOR || 'http://localhost:3006'
 };
