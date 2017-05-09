@@ -125,7 +125,7 @@ exports.register = function(req, res, callback) {
             console.log(err);
             return res.json("user not able to register for push notification");
         }
-        return res.json("user registered for push notification");
+        return res.send(result);
     })
 }
 
@@ -290,7 +290,7 @@ function sendMessage(url, title, text, messagetype, userids, appid, callback) {
         else if(response.statusCode != 204)
           return callback(body);
         else
-            return callback(null," push notification sent");
+            return callback(null, body || "push notification sent");
     });
 }
 
